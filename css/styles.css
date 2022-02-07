@@ -1,0 +1,315 @@
+body{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--baseColor);
+    background: var(--baseBackground);
+}
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram1:hsl(37, 97%, 70%);
+    --instagram2:hsl(329, 70%, 58%);
+    --youTube: hsl(348, 97%, 39%);
+    --gris: hsl(228, 34%, 66%);
+    --bgSwitch: hsl(228, 34%, 66%);
+    --h2Color: #5f6170;
+    --cardGray: #f0f3fa;
+    --cardHover: #e1e3f0; 
+    --lightGray: #f8f9fe;
+    --cardTitle: #5f6170;
+    --baseBackground: white;
+    --baseColor: hsl(225, 18%, 13%);
+    --bgSpinner: white;
+}
+.wrapper{
+    padding: 0 30px;
+}
+.grid{
+    display: grid;
+    grid-row-gap: 25px;
+}
+.dark-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+}
+.checkbox{
+    display: none;
+}
+.checkbox:checked ~ .switch::before{
+    transform: translate(0px);
+}
+.switch{
+    height: 30px;
+    display: block;
+    border-radius: 20px;
+    background: var(--bgSwitch);
+    width: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+.switch::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: var(--bgSpinner);
+    border-radius: 50%;
+    transform: translate(30px);
+    transition: .3s;
+    will-change: transform;
+}
+
+.header{
+    background: var(--lightGray);
+    padding-bottom: 100px;
+    border-radius: 0 0 20px 20px;
+    padding-top: 2em;
+}
+.header-total{
+    color: var(--gris);
+    margin: .5em 0;
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--gris);
+    padding-bottom: 1.5em;
+}
+h1{
+    margin:0;
+    font-size: 1.6em;
+}
+.top-cards{
+    margin-top: -50px;
+    margin-bottom: 3em;
+}
+.card{
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--cardGray);
+    text-align: center;
+}
+.card:hover{
+    background: var(--cardHover);
+    cursor: pointer;
+}
+.card:before{
+    content: "";
+    height: 4px;
+    display: block;
+}
+.card.facebook::before{
+    background: var(--facebook);
+}
+.card.twitter::before{
+    background: var(--twitter);
+}
+.card.instagram::before{
+    /* background: var(--instagram1); */
+    background-image: linear-gradient(to right,var(--instagram1),var(--instagram2));
+}
+.card.youtube::before{
+    background: var(--youTube);
+}
+.card-title{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cardTitle);
+    font-size: .8em;
+    font-weight: bold;
+}
+.card-title img{
+    margin-right: 5px;
+}
+.card-followers{
+    /* border: 1px solid red; */
+}
+.card-followers-number{
+    /* border: 1px solid green; */
+    font-size: 50px;
+    font-weight: 700;
+}
+.card-followers-title{
+    /* border: 1px solid rgb(117, 0, 128); */
+    display: block;
+    text-transform: uppercase;
+    color: #858894;
+    letter-spacing: 3px;
+    font-size: .8em;
+}
+.card-today{
+    margin-top: 25px;
+    color: var(--lime-green);
+    font-size: .8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.card-today img{
+    margin-right: 5px;
+}
+
+/* overview */
+.overview{
+    padding-bottom: 2em;
+}
+h2{
+    color: var(--h2Color);
+}
+.card-small{
+    /* border: 1px solid rgb(30, 0, 128); */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1em;
+    background: var(--cardGray);
+    border-radius: 8px;
+    padding: 1.5em;
+}
+.card-small:hover{
+    background: var(--cardHover);
+    cursor: pointer;
+}
+.card-small p{
+    margin: 0;
+}
+.card-small-views{
+    /* border: 1px solid rgb(128, 0, 0); */
+    color: var(--gris);
+    font-weight: bold;
+    font-size: .9em;
+}
+.card-small-icon{
+    /* border: 1px solid rgb(255, 179, 0); */
+    text-align: right;
+}
+.card-small-number{
+    /* border: 1px solid rgb(0, 128, 107); */
+    font-weight: bold;
+    font-size: 2.5em;
+    line-height: .9;
+}
+.card-small-percentage{
+    /* border: 1px solid rgb(128, 79, 0); */
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--lime-green);
+    font-weight: bold;
+    font-size: .9em;
+}
+.card-small-percentage.is-danger{
+    color:var(--bright-red);
+}
+.card-small-percentage span{
+    display: flex;
+    align-items: center;
+}
+.card-small-percentage img{
+    margin-right: 3px;
+}
+
+@media screen and (min-width:480px) {
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 25px ;
+    }
+    .wrapper{
+        max-width: 1440px;
+        margin: auto;
+    }
+}
+@media screen and (min-width:768px) {
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width:1024px) {
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .header-grid{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+    }
+    .header-grid-flex{
+        display: flex;
+        align-items: center;
+    }
+    .header-total{
+        border: none;
+    }
+}
+.is-light-mode{
+    --gris: hsl(228, 34%, 66%);
+    --bgSwitch: hsl(228, 34%, 66%);
+    --h2Color: #5f6170;
+    --cardGray: #f0f3fa;
+    --cardHover: #e1e3f0; 
+    --lightGray: #f8f9fe;
+    --cardTitle: #5f6170;
+    --baseBackground: white;
+    --baseColor: hsl(225, 18%, 13%);
+    --bgSpinner: white;
+}
+.is-dark-mode{
+    --lightGray: hsl(232, 19%, 15%);
+    --cardGray: hsl(228, 28%, 20%);
+    --cardHover: #333a56; 
+    --baseBackground: hsl(230, 17%, 14%);
+    --baseColor: white;
+    --cardTitle: hsl(228, 34%, 66%);
+    --bgSwitch: linear-gradient(to right, hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+    --bgSpinner: hsl(228, 28%, 20%);
+    --h2Color: white;
+}
+@media (prefers-color-scheme: dark){
+    body{
+        background: var(--baseBackground);
+        color: var(--baseColor);
+    }
+    :root{
+        --lightGray: hsl(232, 19%, 15%);
+        --cardGray: hsl(228, 28%, 20%);
+        --cardHover: #333a56; 
+        --baseBackground: hsl(230, 17%, 14%);
+        --baseColor: white;
+        --cardTitle: hsl(228, 34%, 66%);
+        --bgSwitch: linear-gradient(to right, hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+        --bgSpinner: hsl(228, 28%, 20%);
+        --h2Color: white;
+        /* --gris: hsl(228, 34%, 66%); */
+    }
+    /* .header{
+        background: hsl(232, 19%, 15%);
+    }
+    .header-total{
+        color: var(--cardTitle);
+    }
+    .card-title{
+        color: var(--cardTitle);
+    }
+    .card-followers-title{
+        color: var(--cardTitle);
+    }
+    .card-small-views{
+        color: hsl(228, 34%, 66%);
+    }
+    h2{color: var(white);}
+    .card{
+        background: blue;
+    }
+    .switch{
+        background: var(--gris)
+    }
+    .switch::before{
+        background:var(--cardGray);
+    } */
+}
