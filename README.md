@@ -1,6 +1,6 @@
-##Preview: https://c413bxd.github.io/dark-mode-social-media/
-# Frontend Mentor - Social media dashboard with theme switcher
 
+# Frontend Mentor - Social media dashboard with theme switcher
+## Preview: https://c413bxd.github.io/dark-mode-social-media/
 ![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
